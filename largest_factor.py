@@ -1,4 +1,9 @@
 def largest_factor(x):
+    if x != int(x):
+        raise ValueError
+    if x <= 1:
+        raise ValueError
+
     divisor = 2
     while x > 1:
         quotient, remainder = divmod(x, divisor)

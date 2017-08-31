@@ -9,23 +9,45 @@ without importing any libraries except pytest and pytest-xdist.
 The following is how I did a beginning TDD demo in Python from scratch.
 
 The order of the TDD stuff was roughly:
-- (step1) Started by creating many separate tests.
-- (step2) Created a stub function to make tests fail.
-- (step3) Put meat in the function to make all the tests pass.
-- (step4) Refactored the function.
+- (step-1) Started by creating many separate tests.
+- (step-2) Created a stub function to make tests fail.
+- (step-3) Put meat in the function to make all the tests pass.
+That's the basics, which one repeats over and over.
+
+Then I added some more tests and 
+- (step-4) Add more tests for bad input values.
+- (step-5) Change the code to make the tests pass.
+
+## Installation
+
+The following instructions work on Knoppix 7.7.1 live DVD.
+One can boot actual media such as a DVD on an actual PC,
+or boot the ISO-9660 image of the DVD in a virtual machine.
+The latter is probably more practical for most people
+as it allows those with various operating systems,
+such as macOS, Microsoft Windows, and Linux,
+to play without disturbing their host operating systems.
+
+```
+git clone https://github.com/james-prior/tdd-demo.git
+tdd-demo/setup
+```
 
 ## Dependencies
 
 ```
-git
-Python 3 with the following packages
-- apipkg==1.4
-- execnet==1.4.1
-- pkg-resources==0.0.0
-- py==1.4.34
-- pytest==3.2.1
-- pytest-forked==0.2
-- pytest-xdist==1.20.0
+- virtualenv
+- git
+- Python 3 with the following packages
+  - apipkg==1.4
+  - execnet==1.4.1
+  - pkg-resources==0.0.0
+  - py==1.4.34
+  - pytest==3.2.1
+  - pytest-forked==0.2
+  - pytest-xdist==1.20.0
+- optional
+  - meld
 ```
 
 ## Setup
@@ -53,4 +75,9 @@ watch 'git status'
 
 # in terminal emulator 0:
 # Now do a mix of vi, git add, git commit, and git status commands.
+
+The following commands are handy for seeing the differences between versions.
+git diff master master-without-pi
+git difftool -t meld -y master master-without-pi
 ```
+

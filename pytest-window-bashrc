@@ -1,0 +1,9 @@
+#!/usr/bin/env Use "source" command to execute the commands in this file.
+if [ -a ~/.bashrc ]; then
+    source ~/.bashrc
+fi
+
+source env/bin/activate
+alias gy='git difftool -t meld -y'
+
+py.test -f .

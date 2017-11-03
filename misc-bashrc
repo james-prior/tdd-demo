@@ -1,0 +1,19 @@
+#!/usr/bin/env Use "source" command to execute the commands in this file.
+if [ -a ~/.bashrc ]; then
+    source ~/.bashrc
+fi
+
+source env/bin/activate
+alias gy='git difftool -t meld -y'
+alias gh='git log --pretty=format:"%h %ad %cd %s%d [%an]" --graph --date=format-local:"%Y-%m-%d %H:%M:%S"'
+
+echo git checkout step-0 ;# watch tests fail in py.test window
+echo git checkout step-1 ;# watch tests fail in py.test window
+echo git checkout step-2 ;# watch tests fail in py.test window
+echo git checkout step-3 ;# watch tests pass in py.test window
+echo git checkout step-4 ;# watch tests fail in py.test window
+echo git checkout step-5 ;# watch tests pass in py.test window
+
+echo gy step-1 step-2
+echo gy step-2 step-3
+echo gy step-3 step-4

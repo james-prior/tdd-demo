@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+if [ -a ~/.bashrc ]; then
+    source ~/.bashrc
+fi
+repo_name=tdd-demo
+cd ~/"$repo_name"
+
+sudo apt-get update
+sudo apt-get install -y python3-venv
+sudo apt-get install -y meld
+deactivate 2>>/dev/null
+if [ ! \( -a env \) ]; then
+    python3 -m venv env
+fi
+source env/bin/activate
+pip install -r requirements.txt
+
+# do each startup
+
+xterm -T testing -e bash --rcfile pytest-window-bashrc &
+xterm -T 'git status' -e bash --rcfile git-status-bashrc &
+xterm -T explore -e bash --rcfile misc-bashrc &

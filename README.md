@@ -6,6 +6,9 @@ Test Driven Development (TDD) Demo
 This repo has the files for demonstrating
 [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development).
 Test Driven Development is a process. It is often abbreviated TDD.
+This repo has the files, but not the explanation of how and why
+TDD works. That explanation, that narrative, is saved for live
+presentations.
 
 ## prerequisites
 
@@ -22,10 +25,15 @@ You will need to know
 The TDD process is roughly as follows.
 
 1. Add a test.
-2. Run all tests and see if the new tests fails. (The new tests should fail).
-3. Write the code.
-4. Run all tests. The tests should all pass. If they do not all pass, then
-   debug and fix the code, the tests, or both, until all the tests pass.
+2. Run all tests and see if the new tests fails. (The new tests must fail).
+3. Write the code to fail the tests and run all tests. The tests
+   must fail. If the tests do not fail, then either the test
+   code, the code to test, or both are bad.
+4. Write the code to pass the tests, then run all tests.
+   The tests should all pass, now. If they do not all pass, then
+   debug and fix the code, the tests, or both, until all the
+   tests pass. (If one changes the tests, one should probably go
+   back to step 3)
 5. Refactor code.
 6. Repeat steps 4 through 5 or 1 through 5.
 
@@ -42,14 +50,48 @@ are names of git tags of various versions of the files.
 
 The order of the TDD stuff was roughly:
 - (step-0 tag) Begin with no code.
-- (step-1 tag) Started by creating tests.
-- (step-2 tag) Created a stub function that fails tests.
-- (step-3 tag) Put meat in the function to make all tests pass.
 
-That's the basics, which one repeats over and over. 
+    py.test is running, but there are no tests to run
+    so py.test says that there is nothing to do.
+
+- (step-1 tag) Create tests.
+
+    py.test finds the tests and runs them.
+
+    The tests fail because the code to test does not exist and so
+    fails when the test code tries to import the code to test.
+
+- (step-2 tag) Created a stub function that deliberately fails tests.
+
+    py.test find the tests and the code to test and runs the
+    tests.
+    
+    The tests fail because the code to test deliberately does
+    what is necessary to fail the tests.
+    
+    For many beginners, it is counter-intuitive that one would
+    deliberately fail the tests. The point of this is so that
+    when one writes code to pass the tests in the next step, and
+    the tests pass, one knows that it is because of the changes
+    one made, and not because of bugs in the tests themselves.
+
+    In other words, the point of writing code to fail the tests
+    is to avoid future false positive test results.
+    More succinctly, the point is to test the tests.
+
+- (step-3 tag) Write code to make all tests pass.
+
+    Since the tests were failing in the previous step, one knows
+    that passing results are due to the changes in the code.
+
+Those are the basics, which one repeats over and over. 
 Then I added some more tests.
 - (step-4 tag) Add more tests for bad input values.
 - (step-5 tag) Change the code to make the tests pass.
+
+One of the subtleties of TDD is how big or small each change is.
+When things are going well, larger changes is OK. When progress
+is tough, make small changes.
 
 ## installation
 

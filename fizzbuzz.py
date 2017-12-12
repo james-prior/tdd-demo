@@ -1,9 +1,10 @@
 
 def fizzbuzz(n):
-    if n % 15 == 0:
-        return 'fizzbuzz'
+    output = ''
     if n % 3 == 0:
-        return 'fizz'
+        output += 'fizz'
     if n % 5 == 0:
-        return 'buzz'
-    return str(n)
+        output += 'buzz'
+    if not output:
+        return str(n)
+    return output

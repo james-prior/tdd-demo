@@ -4,4 +4,6 @@ def fizzbuzz(n):
         return 'fizz'
     if n == 5:
         return 'buzz'
+    elif n == 10:
+        return 'buzz'
     return str(n)

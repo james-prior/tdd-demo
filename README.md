@@ -142,28 +142,32 @@ study tdd-demo/setup-everything and the scripts that it uses.
 
 ```
 - git
-- Python 3 with the following packages
+- Python 3.6 with the following packages
   - apipkg==1.4
+  - attrs==17.3.0
   - execnet==1.5.0
   - pkg-resources==0.0.0
-  - py==1.4.34
-  - pytest==3.2.3
+  - pluggy==0.6.0
+  - py==1.5.2
+  - pytest==3.3.1
   - pytest-forked==0.2
   - pytest-xdist==1.20.1
-- venv module for Python 3
+  - six==1.11.0
+- venv module for Python 3.6
 - optional
   - meld
 ```
 
 ## footnote
 
-There are many little differences between different operating systems
-for setting everything up. It is very difficult for beginners to resolve those
-differences, so one particular operating system was chosen so that the setup
-could be automated, so that beginners can be successful.
+There are many little differences between different operating
+systems for setting everything up. It is very difficult for
+beginners to resolve those differences, so one particular
+operating system was chosen so that the setup could be automated,
+so that beginners can be successful.
 
 [Knoppix](http://www.knopper.net/knoppix/index-en.html)
-[7.7.1](http://www.knopper.net/knoppix-mirrors/index-en.html)
+[8.1](http://www.knopper.net/knoppix-mirrors/index-en.html)
 was chosen because it is the granddaddy of live media Linux
 distributions. It can be booted directly on a PC,
 or run in a virtual machine on many different computers.

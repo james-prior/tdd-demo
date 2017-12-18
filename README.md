@@ -162,11 +162,14 @@ for setting everything up. It is very difficult for beginners to resolve those
 differences, so one particular operating system was chosen so that the setup
 could be automated, so that beginners can be successful.
 
-Knoppix 7.7.1 was chosen because it is the granddaddy of live media Linux
+[Knoppix](http://www.knopper.net/knoppix/index-en.html)
+[7.7.1](http://www.knopper.net/knoppix-mirrors/index-en.html)
+was chosen because it is the granddaddy of live media Linux
 distributions. It can be booted directly on a PC,
 or run in a virtual machine on many different computers.
 The latter is probably more practical for most people as it allows those with
 various operating systems, such as macOS, Microsoft Windows, and Linux, to play
 without disturbing their host operating systems.
 Explaining how to create and use virtual machines is beyond the scope of these
+instructions. Explaining how to use Knoppix is beyond the scope of these
 instructions.

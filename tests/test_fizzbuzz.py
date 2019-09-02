@@ -11,6 +11,7 @@ number_to_expected_output = {
     6: 'fizz',
     10: 'buzz',
     15: 'fizzbuzz',
+    30: 'fizzbuzz',
 }
 @pytest.mark.parametrize('number, expected_output', number_to_expected_output.items())
 def test_known_number_returns_expected(number, expected_output):

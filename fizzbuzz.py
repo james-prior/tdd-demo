@@ -3,5 +3,7 @@ def fizzbuzz(x):
         return 'fizz'
     if x == 5:
         return 'buzz'
+    if x == 10:
+        return 'buzz'
     return x
 

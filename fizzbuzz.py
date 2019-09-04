@@ -1,5 +1,8 @@
+def is_multiple_of_three(x):
+    return x % 3 == 0
+
 def fizzbuzz(x):
-    if x % 3 == 0:
+    if is_multiple_of_three(x):
         return 'fizz'
     if x == 5:
         return 'buzz'

@@ -5,7 +5,7 @@ def is_multiple_of_five(x):
     return x % 5 == 0
 
 def fizzbuzz(x):
-    if x % 3 == 0 and x % 5 == 0:
+    if is_multiple_of_three(x) and is_multiple_of_five(x):
         return 'fizzbuzz'
     if is_multiple_of_three(x):
         return 'fizz'
